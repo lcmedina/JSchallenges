@@ -22,18 +22,17 @@ function Book(title, author, ISBN, totalCopies) {
         }
     }
 
-    Book.prototype.sell = function(numSold) {
-        if (numSold == null) {
-            return this.totalCopies - 1
-        } else {
-            return this.totalCopies - numSold
-        }
+    Book.prototype.sell = function(numSold = 1) {
+        this.totalCopies -= numSold;
     }
 
-    Book.prototype.restock = function(numCopies) {
-        if (numCopies === null) {
-            return this.totalCopies + 5
-        } else {
-            return this.totalCopies + numCopies
-        }
+    Book.prototype.restock = function(numCopies = 5) {
+       this.totalCopies += numCopies;
     }
+
+    const HarryPotter = new Book("Harry Potter", "JK Rowling", 123456789, 5);
+    console.log(HarryPotter.getAvailablity());
+    HarryPotter.restock(12);
+    console.log(HarryPotter.getAvailablity());
+    HarryPotter.sell(17);
+    console.log(HarryPotter.getAvailablity());
