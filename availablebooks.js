@@ -5,14 +5,19 @@
 
 // title, author, ISBN, numCopies
 
-function Book(title, author, ISBN, totalCopies) {
+class Book {
+    constructor(title, author, ISBN, totalCopies) {
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
         this.totalCopies = totalCopies;
     }
 
-    Book.prototype.getAvailablity = function() {
+    get availabilty() {
+        return this.getAvailablity();
+    }
+
+    getAvailablity() {
         if (this.totalCopies === 0) {
             return "out of stock"
         } else if (this.totalCopies < 10) {
@@ -22,13 +27,14 @@ function Book(title, author, ISBN, totalCopies) {
         }
     }
 
-    Book.prototype.sell = function(numSold = 1) {
+    sell(numSold = 1) {
         this.totalCopies -= numSold;
     }
 
-    Book.prototype.restock = function(numCopies = 5) {
+    restock(numCopies = 5) {
        this.totalCopies += numCopies;
     }
+} 
 
     const HarryPotter = new Book("Harry Potter", "JK Rowling", 123456789, 5);
     console.log(HarryPotter.getAvailablity());
