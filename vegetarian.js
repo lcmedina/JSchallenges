@@ -25,10 +25,11 @@ let menu = [
     }
 ]
 
+const vegMenu = menu.filter(food => food.vegetarian);
 const list = document.getElementById("menu");
-    for (let m = 0; m < menu.length; m++){
+    for (let m = 0; m < vegMenu.length; m++){
         const item = document.createElement("ul")
-        const food = document.createElement("li").innerHTML = `${menu[m].name}`;
+        const food = document.createElement("li").innerHTML = `${vegMenu[m].name}`;
         item.append(food)
         list.append(item);
     }
