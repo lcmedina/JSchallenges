@@ -1,4 +1,4 @@
-let menu = [
+const resMenu = [
     {
         name: "Eggplant Parm",
         vegetarian: true
@@ -25,7 +25,7 @@ let menu = [
     }
 ]
 
-const vegMenu = menu.filter(food => food.vegetarian);
+const vegMenu = resMenu.filter(food => food.vegetarian);
 const list = document.getElementById("menu");
     for (let m = 0; m < vegMenu.length; m++){
         const item = document.createElement("ul")
@@ -33,3 +33,19 @@ const list = document.getElementById("menu");
         item.append(food)
         list.append(item);
     }
+
+
+// video solution
+function vegetarianMenu(menu) {
+    const menuNode = document.querySelector("#menu2");
+    const vegetarianOptions = menu.filter(
+        (option) => option.vegetarian === true
+    );
+    vegetarianOptions.forEach((option) => {
+        let dish = document.createElement("li");
+        dish.textContent = option.name;
+        menuNode.appendChild(dish);
+    })
+}
+
+vegetarianMenu(resMenu)
