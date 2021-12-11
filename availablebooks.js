@@ -57,3 +57,7 @@ class Book {
             return `The current version of this book is, ${this.edition}.`
         }
     }
+
+    let CrackCode = new TechnicalBook("Cracking the Coding Interview", "Gayle Laakmaann McDowell", 567802341, 12, 6);
+    console.log(" Cracking the Code is currently " + CrackCode.getAvailablity());
+    console.log(CrackCode.getEdition());
