@@ -42,3 +42,18 @@ class Book {
     console.log(HarryPotter.getAvailablity());
     HarryPotter.sell(17);
     console.log(HarryPotter.getAvailablity());
+
+    //Technical book challenge
+
+    //TechnicalBook class inherits from the Book class in the previous challenge. This class will also take a title, author, ISBN, and number of copies, but will take a fifth argument, an edition. The TechnicalBook class will also provide a getEdition function which returns the following string. The current version of this book is, followed by the book's edition. You should use a template literal for this phrase. 
+
+    class TechnicalBook extends Book {
+        constructor(title, author, ISBN, totalCopies, edition) {
+            super(title, author, ISBN, totalCopies);
+            this.edition = edition;
+        }
+
+        getEdition() {
+            return `The current version of this book is, ${this.edition}.`
+        }
+    }
