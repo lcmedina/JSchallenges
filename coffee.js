@@ -6,4 +6,13 @@ function total(total, num) {
     return num * 1.25 + total;
 }
 let cost = drinks.reduce(total, 0); // currentValue starts set to 0
-console.log(`The total bill is ${cost}`)
+console.log(`The total bill is $${cost}`);
+
+function coffeeDate(coffeeArr) {
+    let coffeeSum = coffeeArr.reduce(
+        (totalCoffees, numCoffees) => (totalCoffees += numCoffees)
+    );
+    return `The total bill is $${coffeeSum * 1.25}`
+}
+
+console.log(coffeeDate([3, 2, 1, 5, 3]));
